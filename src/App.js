@@ -1,8 +1,12 @@
-
+import Products from './Products';
+import Checkout from './Checkout';
 
 function App() {
   return (
-      <div></div>
+    <>
+      <Products />
+      <Checkout />
+    </>
   );
 }
 
