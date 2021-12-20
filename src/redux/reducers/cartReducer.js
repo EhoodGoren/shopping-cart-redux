@@ -28,6 +28,12 @@ export default function cartReducer(state = initialState, action) {
                 total: state.total - action.price,
                 items: updatedItems
             }
+        case 'CHECKOUT':
+            return {
+                ...state,
+                total: 0,
+                items: {}
+            }
         default:
             return state;
     }

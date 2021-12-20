@@ -1,5 +1,7 @@
 import { connect } from "react-redux";
 import CartItem from "./CartItem";
+import { cartCheckout } from './redux/actions/cartActions';
+import { productsCheckout } from './redux/actions/productsActions';
 
 function Checkout(props) {
     const generateCart = () => {
@@ -11,11 +13,16 @@ function Checkout(props) {
         }
         return cart;
     }
+    const generateCheckout = () => {
+        const disabled = Object.keys(props.items).length === 0 ? true : false
+        return <button onClick={() => props.checkout()} disabled={disabled}>Checkout</button>
+    }
     return(
         <div>
-            <div>Cart:</div>
+            <div>Your Cart:</div>
             {generateCart()}
-            <div>Your total is: {props.total}$</div>
+            <div>Total: {props.total}$</div>
+            {generateCheckout()}
         </div>
     )
 }
@@ -27,4 +34,13 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Checkout);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        checkout: () => {
+            dispatch(cartCheckout())
+            dispatch(productsCheckout())
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout);

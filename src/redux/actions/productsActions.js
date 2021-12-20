@@ -7,3 +7,7 @@ export const increaseStock = (item) => ({
     type: 'INCREASE_STOCK',
     item,
 })
+
+export const productsCheckout = () => ({
+    type: 'CHECKOUT'
+})

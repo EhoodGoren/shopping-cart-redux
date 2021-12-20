@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { addItem, removeItem } from './redux/actions/cartActions';
 import { increaseStock, decreaseStock } from './redux/actions/productsActions';
-import products from './productsData';
+// import products from './productsData';
 
 function Product(props) {
     const generateAddButton = () => {
@@ -9,7 +9,7 @@ function Product(props) {
         return <button onClick={() => props.addItem(props.item, props.price)} disabled={disabled}>+</button>
     }
     const generateRemoveButton = () => {
-        const originalProductStock = products.find(product => product.item === props.item).stock;
+        const originalProductStock = props.maxStocks[props.item];
         const disabled = props.stocks[props.item] === originalProductStock ? true : false
         return <button onClick={() => props.removeItem(props.item, props.price)} disabled={disabled}>-</button>
     }
@@ -26,7 +26,8 @@ function Product(props) {
 
 const mapStateToProps = (state) => {
     return {
-        stocks: state.products.stocks
+        stocks: state.products.stocks,
+        maxStocks: state.products.maxStocks
     }
 }
 

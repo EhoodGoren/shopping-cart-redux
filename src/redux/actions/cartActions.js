@@ -9,3 +9,7 @@ export const removeItem = (item, price) => ({
     item,
     price
 })
+
+export const cartCheckout = () => ({
+    type: 'CHECKOUT'
+})
