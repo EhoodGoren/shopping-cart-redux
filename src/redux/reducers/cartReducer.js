@@ -8,6 +8,11 @@ export default function cartReducer(state = initialState, action) {
                 ...state,
                 total: state.total + action.price
             }
+        case 'REMOVE_ITEM':
+            return {
+                ...state,
+                total: state.total - action.price
+            }
         default:
             return state;
     }

@@ -5,3 +5,9 @@ export const addItem = (item, price) => ({
     item,
     price
 })
+
+export const removeItem = (item, price) => ({
+    type: 'REMOVE_ITEM',
+    item,
+    price
+})

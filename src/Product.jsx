@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addItem } from './redux/actions';
+import { addItem, removeItem } from './redux/actions';
 
 function Product(props) {
     return (
@@ -8,14 +8,15 @@ function Product(props) {
             <span className="product-price">{props.price}$ </span> 
             <span className="product-stock">x {props.stock}</span>
             <button onClick={() => props.addItem(props.item, props.price)}>+</button>
-            <button>-</button>
+            <button onClick={() => props.removeItem(props.item, props.price)}>-</button>
         </div>
     )
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addItem: (item, price) => dispatch(addItem(item, price))
+        addItem: (item, price) => dispatch(addItem(item, price)),
+        removeItem: (item, price) => dispatch(removeItem(item, price))
     }
 }
 
