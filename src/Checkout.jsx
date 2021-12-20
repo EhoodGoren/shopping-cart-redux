@@ -22,8 +22,8 @@ function Checkout(props) {
 
 const mapStateToProps = (state) => {
     return {
-        total: state.total,
-        items: state.items
+        total: state.cart.total,
+        items: state.cart.items
     }
 }
 
