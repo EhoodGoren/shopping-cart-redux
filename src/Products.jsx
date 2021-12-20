@@ -1,19 +1,21 @@
-import { connect } from 'react-redux';
-import { addItem } from './redux/actions';
+import productsList from './productsData';
+import Product from './Product';
 
 function Products(props) {
+    const generateProducts = () => {
+        const products = [];
+        productsList.forEach(({item, price, stock}) => {
+            products.push(
+                <Product item={item} price={price} stock={stock} />
+            );
+        })
+        return products;
+    }
     return(
         <div id='products'>
-            <button onClick={props.addItem}>+</button>
-            <div>Iphone</div>
+            {generateProducts()}
         </div>
     )
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addItem: () => dispatch(addItem())
-    }
-}
-
-export default connect(null, mapDispatchToProps)(Products);
+export default Products;
