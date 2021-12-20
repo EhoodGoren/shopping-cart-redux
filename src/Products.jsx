@@ -6,7 +6,7 @@ function Products(props) {
         const products = [];
         productsList.forEach(({item, price, stock}) => {
             products.push(
-                <Product item={item} price={price} stock={stock} />
+                <Product key={item} item={item} price={price} stock={stock} />
             );
         })
         return products;
