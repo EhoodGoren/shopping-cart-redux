@@ -11,7 +11,12 @@
 #checkout-btn:hover {
     border: 3px solid gray;
 }
-#order-total {
-    display:flex;
+#order-total, .cart-item{
+    font-size: large;
+    display: flex;
     justify-content: space-between;
+}
+.cart-item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #EBEBE7;
 }
