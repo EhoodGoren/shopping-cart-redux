@@ -1,0 +1,15 @@
+.product {
+    display: flex;
+    font-size: large;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    gap:70px;
+}
+.item-break {
+    margin: 5px;
+    width: 100%;
+    border-top: 2px solid #D8D7D1;
+}
+.product-buttons {
+    justify-content: flex-end;
+}

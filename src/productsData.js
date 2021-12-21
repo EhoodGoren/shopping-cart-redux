@@ -5,7 +5,7 @@ const products = [
         stock: 3
     },
     {
-        item: 'T Shirt',
+        item: 'T-Shirt',
         price: 20,
         stock: 10
     },
