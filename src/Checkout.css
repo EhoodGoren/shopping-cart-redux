@@ -8,7 +8,10 @@
     background-color: black;
     color: white;
 }
-#checkout-btn:hover {
+#checkout-btn:disabled {
+    background-color: #ABABA6;
+}
+#checkout-btn:enabled:hover {
     border: 3px solid gray;
 }
 #order-total, .cart-item{
