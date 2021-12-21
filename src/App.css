@@ -1,0 +1,21 @@
+#app {
+    width: 95vw;
+    height: 95vh;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+#products {
+    grid-area: 2 / 2 / 10 / 5;
+}
+#checkout {
+    grid-area: 2 / 6 / 10 / 9;
+}
+#app-title {
+    grid-area: 1 / 1 / 2 / 4;
+}
+.shop-titles {
+    border-bottom: 3px black solid;
+}

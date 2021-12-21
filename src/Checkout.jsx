@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import CartItem from "./CartItem";
 import { cartCheckout } from './redux/actions/cartActions';
 import { productsCheckout } from './redux/actions/productsActions';
+import './Checkout.css';
 
 function Checkout(props) {
     const generateCart = () => {
@@ -15,13 +16,16 @@ function Checkout(props) {
     }
     const generateCheckout = () => {
         const disabled = Object.keys(props.items).length === 0 ? true : false
-        return <button onClick={() => props.checkout()} disabled={disabled}>Checkout</button>
+        return <button id='checkout-btn' onClick={() => props.checkout()} disabled={disabled}>Checkout</button>
     }
     return(
-        <div>
-            <div>Your Cart:</div>
+        <div id='checkout-div'>
             {generateCart()}
-            <div>Total: {props.total}$</div>
+            <br />
+            <div id='price-break'></div>
+            <br />
+            <div id='order-total'><b>ORDER TOTAL:</b> <span className='order-price'><b>{props.total}$</b></span></div>
+            <br></br>
             {generateCheckout()}
         </div>
     )
